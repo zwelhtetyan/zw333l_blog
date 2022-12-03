@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="bg-mainBg min-h-screen flex flex-col text-textColor">
+        <%- include('../partials/nav.ejs') %>
+
+            <main class="max-w-5xl p-4 mx-auto w-full">
+                <div class="grid gap-4 grid-cols-autofit-300">
+                    <% blogs.map(blog=> { %>
+                        <article class="bg-cardBg p-3 rounded-sm shadow-sm duration-75 hover:shadow-md cursor-pointer">
+                            <a href="/blogs/<%=blog._id %>">
+                                <h1 class="text-xl font-blod">
+                                    <%= blog.title %>
+                                </h1>
+                                <h3 class="text-[15px]">
+                                    <%= blog.subtitle %>
+                                </h3>
+                                <p class="my-1">
+                                    <%= blog.body %>
+                                </p>
+                                <p class="text-end text-xs">
+                                    <span class="italic">by - </span>
+                                    <span class="font-semibold">
+                                        <%= blog.author %>
+                                            </>
+                                    </span>
+                                </p>
+                            </a>
+                        </article>
+                        <% }) %>
+                </div>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>

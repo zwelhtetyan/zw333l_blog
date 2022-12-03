@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="bg-[#fafafa min-h-screen flex flex-col">
+        <%- include('../partials/nav.ejs') %>
+
+            <main class="max-w-5xl p-4 mx-auto w-full">
+                <div class="max-w-3xl p-3 mx-auto bg-cardBg rounded-md relative">
+                    <h1 class="text-center text-xl font-blod mb-2 mt-7">
+                        <%=blog.title %>
+                    </h1>
+                    <h5 class="mb-1">
+                        <%=blog.subtitle %>
+                    </h5>
+                    <p>
+                        <%=blog.body %>
+                    </p>
+                    <p class="text-sm text-end mt-1">
+                        by - <%=blog.author %>
+                    </p>
+
+                    <div id="<%=blog._id %>"
+                        class="delete_btn bg-red-500 py-1 px-2 rounded-md text-white absolute top-[5px] right-[5px] text-sm cursor-pointer">
+                        delete
+                    </div>
+                </div>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+                <script>
+                    const deleteBtn = document.querySelector('.delete_btn');
+                    const url = `/blogs/${deleteBtn.id}`
+
+                    deleteBtn.addEventListener('click', () => {
+                        fetch(url, { method: 'delete' })
+                            .then(res => res.json()).then(data => window.location.href = data.redirect)
+                            .catch(err => console.log(err))
+                    })
+                </script>
+
+    </body>
+
+</html>

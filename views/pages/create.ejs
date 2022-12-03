@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="bg-mainBg min-h-screen flex flex-col text-textColor">
+        <%- include('../partials/nav.ejs') %>
+
+            <main class="max-w-5xl p-4 mx-auto w-full">
+                <form action="/" method="post" class="max-w-2xl mx-auto p-2 flex flex-col items-center mt-20">
+                    <input required class="max-w-md bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
+                        name="title" placeholder="title">
+                    <input class="max-w-md bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
+                        name="subtitle" placeholder="subtitle">
+                    <textarea required class="max-w-md bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
+                        name="body" placeholder="body"></textarea>
+                    <input required class="max-w-md bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
+                        name="author" placeholder="author">
+
+                    <button class="bg-primary py-2 px-4 rounded-md hover:bg-secondary duration-75">Create</button>
+                </form>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>
