@@ -7,17 +7,18 @@
         <%- include('../partials/nav.ejs') %>
 
             <main class="max-w-5xl p-4 mx-auto w-full">
-                <form action="/" method="post" class="max-w-4xl mx-auto p-2 flex flex-col items-center mt-20">
+                <form action="/blogs/<%=blog._id%>/edit" method="post"
+                    class="max-w-4xl mx-auto p-2 flex flex-col items-center mt-20">
                     <input required class="max-w-xl bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
-                        name="title" placeholder="title">
+                        name="title" placeholder="title" value="<%=blog.title%>">
                     <input class="max-w-xl bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
-                        name="subtitle" placeholder="subtitle">
+                        name="subtitle" placeholder="subtitle" value="<%=blog.subtitle%>">
                     <textarea required class="max-w-xl bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
-                        name="body" placeholder="body"></textarea>
+                        name="body" placeholder="body"><%=blog.body%></textarea>
                     <input required class="max-w-xl bg-cardBg w-full p-2 rounded-md outline-none mb-3" type="text"
-                        name="author" placeholder="author">
+                        name="author" placeholder="author" value="<%=blog.author%>">
 
-                    <button class="bg-primary py-2 px-4 rounded-md hover:bg-secondary duration-75">Create</button>
+                    <button class="bg-primary py-2 px-4 rounded-md hover:bg-secondary duration-75">Update</button>
                 </form>
             </main>
 

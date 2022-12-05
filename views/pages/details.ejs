@@ -21,9 +21,16 @@
                         by - <%=blog.author %>
                     </p>
 
-                    <div id="<%=blog._id %>"
-                        class="delete_btn bg-red-500 py-1 px-2 rounded-md text-white absolute top-[5px] right-[5px] text-sm cursor-pointer">
-                        delete
+                    <div class="absolute top-[5px] right-[5px] flex gap-1">
+                        <div id="<%=blog._id %>"
+                            class="edit_btn bg-blue-500 py-1 px-2 rounded-md text-white text-sm cursor-pointer">
+                            <a href="/blogs/<%=blog._id%>/edit">Edit</a>
+                        </div>
+
+                        <div id="<%=blog._id %>"
+                            class="delete_btn bg-red-500 py-1 px-2 rounded-md text-white text-sm cursor-pointer">
+                            delete
+                        </div>
                     </div>
                 </div>
             </main>

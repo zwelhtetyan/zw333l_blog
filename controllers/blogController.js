@@ -23,6 +23,24 @@ const create_post = async (req, res) => {
 const create_get = (req, res) =>
    res.render('pages/create', { title: 'Create' });
 
+const edit = async (req, res) => {
+   try {
+      const blog = await Blog.findById(req.params.id);
+      res.render('pages/edit', { title: 'Edit', blog });
+   } catch (error) {
+      res.status(404).render('pages/404', { title: '404' });
+   }
+};
+
+const edit_post = async (req, res) => {
+   try {
+      await Blog.findOneAndUpdate({ _id: req.params.id }, req.body);
+      res.redirect('/');
+   } catch (error) {
+      res.status(500).send(error);
+   }
+};
+
 const detail = async (req, res) => {
    try {
       const blog = await Blog.findById(req.params.id);
@@ -45,6 +63,8 @@ module.exports = {
    index,
    create_post,
    create_get,
+   edit,
+   edit_post,
    detail,
    deleteBlog,
 };

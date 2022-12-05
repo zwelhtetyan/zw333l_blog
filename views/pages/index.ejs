@@ -7,7 +7,7 @@
         <%- include('../partials/nav.ejs') %>
 
             <main class="max-w-5xl p-4 mx-auto w-full">
-                <div class="grid gap-4 grid-cols-autofit-300">
+                <div class="grid gap-4 grid-cols-1 xs:grid-cols-autofit-300">
                     <% blogs.map(blog=> { %>
                         <article class="bg-cardBg p-3 rounded-sm shadow-sm duration-75 hover:shadow-md cursor-pointer">
                             <a href="/blogs/<%=blog._id %>">
