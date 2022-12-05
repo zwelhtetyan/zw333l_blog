@@ -6,18 +6,18 @@ const blogSchema = new Schema(
    {
       title: {
          type: String,
-         require: true,
+         required: true,
       },
       subtitle: {
          type: String,
       },
       body: {
          type: String,
-         require: true,
+         required: true,
       },
       author: {
          type: String,
-         require: true,
+         required: true,
       },
    },
    { timestamps: true }
